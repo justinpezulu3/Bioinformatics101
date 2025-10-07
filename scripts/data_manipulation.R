@@ -43,11 +43,4 @@ data.long%>%
   left_join(., metadata.modified, by = c("samples" = "description"))%>%
  # head()
 
-#explore data
-  
-  data_joined %>%
-  filter(gene %in% c("BRCA1", "BRCA2")) %>%
-  group_by(gene, tissue) %>%
-  summarise(mean_FPKM = mean(FPKM, na.rm = TRUE)) %>%
-  arrange(gene, tissue) %>%
-  head()
+
